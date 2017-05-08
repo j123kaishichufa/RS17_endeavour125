@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+Endeavour Agile ALM
+Copyright (C) 2009  Ezequiel Cuellar
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<hibernate-mapping>
+	
+	<joined-subclass name="org.endeavour.mgmt.model.UseCase" extends="org.endeavour.mgmt.model.WorkProduct" table="USE_CASE">
+		<key column="id"/>
+			
+		<property name="preconditions" column="PRECONDITIONS" />
+		<property name="postconditions" column="POSTCONDITIONS" />
+		<property name="type" column="TYPE" />
+		
+		<list name="tasks" lazy="true" inverse="true" cascade="all">
+			<key column="WORK_PRODUCT_ID"/>
+		    <index column="ID"/>
+		    <one-to-many class="org.endeavour.mgmt.model.Task"/>
+		</list>
+		
+		<list name="events" lazy="true" inverse="true" cascade="all">
+			<key column="WORK_PRODUCT_ID"/>
+			<index column="ID"/>
+			<one-to-many class="org.endeavour.mgmt.model.Event"/>
+		</list>		
+		
+		<set name="actors" lazy="true" table="USE_CASE_ACTOR">
+			<key column="USE_CASE_ID"/>
+			<many-to-many column="ACTOR_ID" class="org.endeavour.mgmt.model.Actor"/>
+	    </set>
+		
+		<many-to-one name="extend" column="EXTEND_ID" />
+		<many-to-one name="include" column="INCLUDE_ID" />
+		
+	</joined-subclass>
+
+</hibernate-mapping>

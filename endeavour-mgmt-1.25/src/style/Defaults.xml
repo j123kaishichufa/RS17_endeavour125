@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+Endeavour Agile ALM
+Copyright (C) 2009  Ezequiel Cuellar
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<xod>
+  <alias name="Style" class="thinwire.ui.style.Style"/>
+
+  <Style id="default">
+    <background color="transparent"/>
+    <font family="Tahoma, sans-serif" color="windowtext" size="8" italic="false" bold="false" underline="false" strike="false"/>
+    <border size="0" type="none" color="transparent"/>
+    <fX positionChange="none" sizeChange="none" visibleChange="none"/>
+  </Style>
+  
+  <Style id="default.inset" copy="default">
+    <background color="window"/>
+    <border size="1" type="inset" color="rgb(150, 150, 150)"/>
+  </Style>
+
+  <Style id="default.outset" copy="default">
+    <background color="threedface"/>
+    <border size="1" type="outset" color="rgb(150, 150, 150)"/>
+  </Style>
+</xod>

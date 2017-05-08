@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+Endeavour Agile ALM
+Copyright (C) 2009  Ezequiel Cuellar
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<hibernate-mapping>
+
+    <class name="org.endeavour.mgmt.model.SecurityGroup" table="SECURITY_GROUP">
+
+        <id name="id" column="ID">
+            <generator class="assigned"/>
+        </id>
+        <property name="name" column="NAME"/>
+				
+		<list name="privileges" lazy="true" inverse="true" cascade="all">
+		  <key column="SECURITY_GROUP_ID"/>
+		  <index column="ID"/>
+		  <one-to-many class="org.endeavour.mgmt.model.Privilege"/>
+		</list>
+		
+		<list name="projectMembers" lazy="true" inverse="true" cascade="none">
+		  <key column="SECURITY_GROUP_ID"/>
+		  <index column="ID"/>
+		  <one-to-many class="org.endeavour.mgmt.model.ProjectMember"/>
+		</list>
+		
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+Endeavour Agile ALM
+Copyright (C) 2009  Ezequiel Cuellar
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<hibernate-mapping>
+
+    <class name="org.endeavour.mgmt.model.TestRun" table="TEST_RUN">
+       	<id name="id" column="ID">
+            <generator class="assigned"/>
+        </id>
+        <property name="status" column="STATUS"/>
+		<property name="executionDate" column="EXECUTION_DATE"/>		
+		<property name="folder" column="FOLDER"/>
+		
+		<many-to-one name="testCase" column="TEST_CASE_ID" not-null="true"/>
+		<many-to-one name="testPlan" column="TEST_PLAN_ID" not-null="true"/>
+		
+		<list name="comments" lazy="true" inverse="true" cascade="all">
+		  <key column="TEST_RUN_ID"/>
+		  <index column="ID"/>
+		  <one-to-many class="org.endeavour.mgmt.model.Comment"/>
+		</list>
+		
+		<set name="projectMembers" lazy="true" table="TEST_RUN_PROJECT_MEMBER">
+			<key column="TEST_RUN_ID"/>
+			<many-to-many column="MEMBER_ID" class="org.endeavour.mgmt.model.ProjectMember"/>
+	    </set>
+		
+	</class>
+
+</hibernate-mapping>

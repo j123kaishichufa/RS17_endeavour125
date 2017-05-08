@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./getResource?FILE_NAME=/jsgantt/jsgantt.css" />
+<script language="javascript" src="./getResource?FILE_NAME=/jsgantt/jsgantt.js"></script>
+<body>
+<div style="position:relative" class="gantt" id="GanttChartDIV"></div>
+<script>
+var g = new JSGantt.GanttChart('g',document.getElementById('GanttChartDIV'), 'month');
+g.setShowRes(1);
+g.setShowDur(1);
+g.setShowComp(1);
+g.setCaptionType('Resource');
+g.setDateInputFormat('mm/dd/yyyy');
+g.setDateDisplayFormat('mm/dd/yyyy');
+if( g ) {
+g.AddTaskItem(new JSGantt.TaskItem(1,'POS Project','07/05/2009','02/12/2010','ff00ff', '', 0, '-',21,1,0, 1));
+g.AddTaskItem(new JSGantt.TaskItem(2,'POS Iteration 1','07/05/2009','08/05/2009','ff00ff', '', 0, '-',26,1,1, 1));
+g.AddTaskItem(new JSGantt.TaskItem(3,'Login Use Case','07/05/2009','08/05/2009','ff00ff', '', 0, 'rsmith',55,0,2, 1));
+g.AddTaskItem(new JSGantt.TaskItem(4,'Database privileges request','07/05/2009','08/05/2009','ff00ff', '', 0, 'djohnson',25,0,2, 1));
+g.AddTaskItem(new JSGantt.TaskItem(5,'Inventory System','07/05/2009','08/05/2009','ff00ff', '', 0, 'rsmith',0,0,2, 1));
+g.AddTaskItem(new JSGantt.TaskItem(6,'Login defect','07/05/2009','08/05/2009','ff00ff', '', 0, 'rsmith',15,0,2, 1));
+g.AddTaskItem(new JSGantt.TaskItem(7,'System Documentation','07/05/2009','08/05/2009','ff00ff', '', 0, 'rpeters',10,0,1, 1));
+g.Draw();
+g.DrawDependencies();
+}
+else
+{
+alert("not defined");
+}
+</script>
+</body>
+</head>
+</html>

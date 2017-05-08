@@ -1,0 +1,46 @@
+##################### THIRD PARTY INTEGRATION CONFIGURATION #####################
+
+ci.location=http://localhost/endeavour-ci
+svn.location=http://localhost/endeavour-svn
+wiki.location=http://localhost/endeavour-wiki
+forums.location=http://localhost/endeavour-forums/install.jsp
+
+############################### EMAIL CONFIGURATION #############################
+
+# email will appear from this address.
+mail.fromAddress=
+
+# Hostname or IP address of SMTP server.
+mail.host=
+
+# TCP/IP port to connect on.  Defaults to port 25 if not specified.
+# Port 465 is typically used for SSL (smtps).
+# Port 587 is typically used with TLS and requires authentication as per RFC.
+# mail.port=465
+# mail.port=587
+mail.port=25
+
+# Should use neither or one of the following
+mail.useSSL=false
+mail.useTLS=false
+
+# Leave empty if not using authenticated SMTP
+mail.userid=
+mail.password=
+
+############################### LDAP CONFIGURATION ##############################
+
+# For more information visit the LDAP Endeavour integration wiki page at
+# http://sourceforge.net/apps/mediawiki/endeavour-mgmt/index.php?title=LDAP_Integration
+
+# Enables or disables the LDAP authentication. If true then all configuration properties
+# must be specified.
+ldap.autentication.enabled=false
+
+# LDAP location. For example "ldap://localhost:10389".
+ldap.location=
+
+# LDAP organizational unit. For example "ou=users,ou=system".
+ldap.ou=
+
+

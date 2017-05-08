@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+Endeavour Agile ALM
+Copyright (C) 2009  Ezequiel Cuellar
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<hibernate-mapping>
+
+    <class name="org.endeavour.mgmt.model.ProjectMember" table="PROJECT_MEMBER">
+
+        <id name="id" column="ID">
+            <generator class="assigned"/>
+        </id>
+        <property name="userId" column="USER_ID"/>
+		<property name="password" column="PASSWORD"/>
+		<property name="firstName" column="FIRST_NAME"/>
+		<property name="lastName" column="LAST_NAME"/>
+		<property name="status" column="STATUS"/>
+		<property name="statusDate" column="STATUS_DATE"/>
+		<property name="role" column="ROLE"/>
+		<property name="acceptNotifications" column="ACCEPT_NOTIFICATIONS"/>
+		<property name="email" column="EMAIL"/>
+		
+		<many-to-one name="securityGroup" column="SECURITY_GROUP_ID" not-null="false"/>
+		
+		<set name="projects" inverse="true" lazy="true" table="PROJECT_PROJECT_MEMBER">
+			<key column="MEMBER_ID"/>
+			<many-to-many column="PROJECT_ID" class="org.endeavour.mgmt.model.Project"/>
+		</set>
+		
+		<set name="workProducts" inverse="true" lazy="true" table="WORK_PRODUCT_PROJECT_MEMBER">
+			<key column="MEMBER_ID"/>
+			<many-to-many column="WORK_PRODUCT_ID" class="org.endeavour.mgmt.model.WorkProduct"/>
+		</set>
+		
+		<set name="testRuns" inverse="true" lazy="true" table="TEST_RUN_PROJECT_MEMBER">
+			<key column="MEMBER_ID"/>
+			<many-to-many column="TEST_RUN_ID" class="org.endeavour.mgmt.model.TestRun"/>
+		</set>
+		
+    </class>
+
+</hibernate-mapping>

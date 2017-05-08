@@ -1,0 +1,14 @@
+﻿Ezequiel Cuellar <e-cuellar@users.sourceforge.net>
+
+Special thanks to the following contributors:
+Marius Istrate for Endeavour's MSSQL database implementation.
+Gary S. Cuozzo for improving Endeavour's email support.
+Harman Bajwa for overall improvements, valuable feedback and Oracle support.
+Paul Haller for German translation and Oracle support.
+David Kats for bug fixes and valuable feedback.
+Ma Dengjun for Chinese translation.
+Nico Altink for Dutch translation.
+Stephan Dufour for French translation.
+Lukasz Malek for Polish translation.
+Epifanio Dinis for Portuguese translation.
+Tomas Di Domenico bug fixes and valuable feedback.

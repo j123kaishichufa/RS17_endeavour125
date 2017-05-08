@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+Endeavour Agile ALM
+Copyright (C) 2009  Ezequiel Cuellar
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<hibernate-mapping>
+
+    <class name="org.endeavour.mgmt.model.Project" table="PROJECT">
+		
+        <id name="id" column="ID">
+            <generator class="assigned"/>
+        </id>
+        <property name="name" column="NAME" />
+		<property name="description" column="DESCRIPTION" />
+		<property name="startDate" column="START_DATE"/>
+		<property name="endDate" column="END_DATE"/>
+		<property name="status" column="STATUS" />
+		<property name="createdBy" column="CREATED_BY"/>
+		
+		<list name="workProducts" lazy="true" inverse="true" cascade="all">
+		  <key column="PROJECT_ID"/>
+		  <index column="ID"/>
+		  <one-to-many class="org.endeavour.mgmt.model.WorkProduct"/>
+		</list>
+		
+		<list name="testCases" lazy="true" inverse="true" cascade="all">
+		  <key column="PROJECT_ID"/>
+		  <index column="ID"/>
+		  <one-to-many class="org.endeavour.mgmt.model.TestCase"/>
+		</list>
+		
+		<list name="testPlans" lazy="true" inverse="true" cascade="all">
+		  <key column="PROJECT_ID"/>
+		  <index column="ID"/>
+		  <one-to-many class="org.endeavour.mgmt.model.TestPlan"/>
+		</list>		
+		
+		<list name="glossaryTerms" lazy="true" inverse="true" cascade="all">
+		  <key column="PROJECT_ID"/>
+		  <index column="ID"/>
+		  <one-to-many class="org.endeavour.mgmt.model.GlossaryTerm"/>
+		</list>		
+		
+		<list name="documents" lazy="true" inverse="true" cascade="all">
+		  <key column="PROJECT_ID"/>
+		  <index column="ID"/>
+		  <one-to-many class="org.endeavour.mgmt.model.Document"/>
+		</list>
+		
+		<list name="actors" lazy="true" inverse="true" cascade="all">
+		  <key column="PROJECT_ID"/>
+		  <index column="ID"/>
+		  <one-to-many class="org.endeavour.mgmt.model.Actor"/>
+		</list>		
+		
+		<list name="iterations" lazy="true" inverse="true" cascade="all">
+		  <key column="PROJECT_ID"/>
+		  <index column="ID"/>
+		  <one-to-many class="org.endeavour.mgmt.model.Iteration"/>
+		</list>
+		
+		<set name="projectMembers" lazy="true" table="PROJECT_PROJECT_MEMBER">
+			<key column="PROJECT_ID"/>
+			<many-to-many column="MEMBER_ID" class="org.endeavour.mgmt.model.ProjectMember"/>
+	    </set>
+		
+    </class>
+
+</hibernate-mapping>

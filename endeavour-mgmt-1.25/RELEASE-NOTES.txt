@@ -1,0 +1,15 @@
+Endeavour Agile ALM is pleased to annouce  its 1.25 version release!
+
+Endeavour Application Lifecycle Management is an Open Source solution to manage the creation of large-scale enterprise systems in an iterative and incremental development process. It features support for Use Case management, Iterations, Project Plan, Change Requests, Defect Tracking, Test Cases, Test Plans, Tasks, Document management, Project Wiki and many other process artifacts.
+
+-Fixed Null Pointer Exception when deleting Actors.
+-Localization to Portuguese.
+-Gantt chart was not displaying when entering project with commas in the name.
+
+
+Please report promptly any issues found to:
+
+e-cuellar@users.sourceforge.net
+ 
+
+As well as any feature requests.

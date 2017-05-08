@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./getResource?FILE_NAME=/jsgantt/jsgantt.css" />
+<script language="javascript" src="./getResource?FILE_NAME=/jsgantt/jsgantt.js"></script>
+<body>
+<div style="position:relative" class="gantt" id="GanttChartDIV"></div>
+<script>
+var g = new JSGantt.GanttChart('g',document.getElementById('GanttChartDIV'), 'month');
+g.setShowRes(1);
+g.setShowDur(1);
+g.setShowComp(1);
+g.setCaptionType('Resource');
+g.setDateInputFormat('mm/dd/yyyy');
+g.setDateDisplayFormat('mm/dd/yyyy');
+if( g ) {
+g.AddTaskItem(new JSGantt.TaskItem(1,'Test Project','08/23/2009','04/24/2010','ff00ff', '', 0, '-',0,1,0, 1));
+g.AddTaskItem(new JSGantt.TaskItem(2,'Iteration Test','08/23/2009','08/23/2009','ff00ff', '', 0, '-',0,1,1, 1));
+g.AddTaskItem(new JSGantt.TaskItem(3,'Use Case Test','08/23/2009','08/23/2009','ff00ff', '', 0, '-',0,0,2, 1));
+g.Draw();
+g.DrawDependencies();
+}
+else
+{
+alert("not defined");
+}
+</script>
+</body>
+</head>
+</html>

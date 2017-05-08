@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+Endeavour Agile ALM
+Copyright (C) 2009  Ezequiel Cuellar
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<xod>
+  <property name="path.image" value="${xod.path}/img/"/>
+
+  <!-- NOTE: If you comment out the activityIndicator line, it will remove the activity indicator -->
+  <property name="image.activityIndicator" value="${path.image}activityInd.gif"/>
+  <property name="image.dragDrop.valid" value="${path.image}dragValid.png"/>
+  <property name="image.dragDrop.invalid" value="${path.image}dragInvalid.png"/>
+
+  <property name="image.checkBox.check" value="${path.image}cbChecked.png"/>
+  <property name="image.checkBox.checkDisabled" value="${path.image}cbDisabledChecked.png"/>
+
+  <property name="image.dateBox.prevArrow" value="${path.image}leftArrow.png"/>
+  <property name="image.dateBox.nextArrow" value="${path.image}rightArrow.png"/>
+
+  <property name="image.dialog.resize" value="${path.image}dResize.png"/>
+  <property name="image.dialog.close" value="${path.image}dClose.png"/>
+
+  <property name="image.dateBox.prevArrow" value="${path.image}leftArrow.png"/>
+  <property name="image.dateBox.nextArrow" value="${path.image}rightArrow.png"/>
+
+  <property name="image.dropDown.buttonArrow" value="${path.image}ddButton.png"/>
+  <property name="image.dropDown.buttonArrowDisabled" value="${path.image}ddDisabledButton.png"/>
+
+  <property name="image.gridBox.checked" value="${path.image}gbChecked.png"/>
+  <property name="image.gridBox.unchecked" value="${path.image}gbUnchecked.png"/>
+  <property name="image.gridBox.childArrow" value="${path.image}gbChildArrow.png"/>
+  <property name="image.gridBox.childArrowInvert" value="${path.image}gbChildArrowInvert.png"/>
+  <property name="image.gridBox.sortArrowAsc" value="${path.image}gbSortOrderAsc.png"/>
+  <property name="image.gridBox.sortArrowDesc" value="${path.image}gbSortOrderDesc.png"/>
+
+  <property name="image.menu.childArrow" value="${path.image}menuArrow.png"/>
+  <property name="image.menu.childArrowInvert" value="${path.image}menuArrowInvert.png"/>
+
+  <property name="image.radioButton.check" value="${path.image}rbChecked.png"/>
+  <property name="image.radioButton.checkDisabled" value="${path.image}rbDisabledChecked.png"/>
+
+  <!-- NOTE: There are too many images used by Tree currently.  Will be cleaned up for v1.3 -->
+  <property name="image.tree.empty" value="${path.image}spacer.gif"/>
+  <property name="image.tree.expand" value="${path.image}Expanded.gif"/>
+  <property name="image.tree.expandBottom" value="${path.image}Expanded.gif"/>
+  <property name="image.tree.expandBottomTop" value="${path.image}Expanded.gif"/>
+  <property name="image.tree.expandTop" value="${path.image}Expanded.gif"/>
+  <property name="image.tree.leaf" value="${path.image}spacer.gif"/>
+  <property name="image.tree.leafBottom" value="${path.image}spacer.gif"/>
+  <property name="image.tree.leafBottomTop" value="${path.image}spacer.gif"/>
+  <property name="image.tree.leafTop" value="${path.image}spacer.gif"/>
+  <property name="image.tree.straight" value="${path.image}spacer.gif"/>
+  <property name="image.tree.unexpand" value="${path.image}Collapsed.gif"/>
+  <property name="image.tree.unexpandBottom" value="${path.image}Collapsed.gif"/>
+  <property name="image.tree.unexpandBottomTop" value="${path.image}Collapsed.gif"/>
+  <property name="image.tree.unexpandTop" value="${path.image}Collapsed.gif"/>
+</xod>
